@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <h1>Hello HomeController!</h1>
+
+    {%  for film in films %}
+        <h2>{{ film.titre }}</h2>
+        <p>{{ film.datesortie |date('d/m/Y')}}</p>
+        <a href="{{ path('app_film_desc', {id : film.id}) }}">Description</a>
+    {% endfor %}
+{% endblock %}
